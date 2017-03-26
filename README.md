@@ -3,7 +3,7 @@
 
 [![NPM](https://nodei.co/npm/grunt-contrib-cssmin.png?downloads=true)](https://www.npmjs.com/package/grunt-contrib-cssmin)
 
-[![apidoc](https://npmdoc.github.io/node-npmdoc-grunt-contrib-cssmin/build/screen-capture.buildNpmdoc.browser._2Fhome_2Ftravis_2Fbuild_2Fnpmdoc_2Fnode-npmdoc-grunt_contrib_cssmin_2Ftmp_2Fbuild_2Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-grunt-contrib-cssmin/build..beta..travis-ci.org/apidoc.html)
+[![apidoc](https://npmdoc.github.io/node-npmdoc-grunt-contrib-cssmin/build/screen-capture.buildNpmdoc.browser._2Fhome_2Ftravis_2Fbuild_2Fnpmdoc_2Fnode-npmdoc-grunt-contrib-cssmin_2Ftmp_2Fbuild_2Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-grunt-contrib-cssmin/build..beta..travis-ci.org/apidoc.html)
 
 ![package-listing](https://npmdoc.github.io/node-npmdoc-grunt-contrib-cssmin/build/screen-capture.npmPackageListing.svg)
 
