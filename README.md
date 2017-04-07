@@ -1,11 +1,13 @@
-# api documentation for  [grunt-contrib-cssmin (v2.0.0)](https://github.com/gruntjs/grunt-contrib-cssmin#readme)  [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-grunt-contrib-cssmin.svg)](https://travis-ci.org/npmdoc/node-npmdoc-grunt-contrib-cssmin)
+# api documentation for  [grunt-contrib-cssmin (v2.0.0)](https://github.com/gruntjs/grunt-contrib-cssmin#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-grunt-contrib-cssmin.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-grunt-contrib-cssmin) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-grunt-contrib-cssmin.svg)](https://travis-ci.org/npmdoc/node-npmdoc-grunt-contrib-cssmin)
 #### Minify CSS
 
 [![NPM](https://nodei.co/npm/grunt-contrib-cssmin.png?downloads=true)](https://www.npmjs.com/package/grunt-contrib-cssmin)
 
-[![apidoc](https://npmdoc.github.io/node-npmdoc-grunt-contrib-cssmin/build/screen-capture.buildNpmdoc.browser._2Fhome_2Ftravis_2Fbuild_2Fnpmdoc_2Fnode-npmdoc-grunt_contrib_cssmin_2Ftmp_2Fbuild_2Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-grunt-contrib-cssmin/build..beta..travis-ci.org/apidoc.html)
+[![apidoc](https://npmdoc.github.io/node-npmdoc-grunt-contrib-cssmin/build/screenCapture.buildNpmdoc.browser._2Fhome_2Ftravis_2Fbuild_2Fnpmdoc_2Fnode-npmdoc-grunt-contrib-cssmin_2Ftmp_2Fbuild_2Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-grunt-contrib-cssmin/build/apidoc.html)
 
-![package-listing](https://npmdoc.github.io/node-npmdoc-grunt-contrib-cssmin/build/screen-capture.npmPackageListing.svg)
+![npmPackageListing](https://npmdoc.github.io/node-npmdoc-grunt-contrib-cssmin/build/screenCapture.npmPackageListing.svg)
+
+![npmPackageDependencyTree](https://npmdoc.github.io/node-npmdoc-grunt-contrib-cssmin/build/screenCapture.npmPackageDependencyTree.svg)
 
 
 
