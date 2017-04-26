@@ -1,0 +1,182 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="https://github.com/gruntjs/grunt-contrib-cssmin#readme">grunt-contrib-cssmin (v2.1.0)</a>
+</h1>
+<h4>Minify CSS</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.grunt-contrib-cssmin">module grunt-contrib-cssmin</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.grunt-contrib-cssmin.grunt-contrib-cssmin">
+            function <span class="apidocSignatureSpan"></span>grunt-contrib-cssmin
+            <span class="apidocSignatureSpan">(grunt)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.grunt-contrib-cssmin" id="apidoc.module.grunt-contrib-cssmin">module grunt-contrib-cssmin</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.grunt-contrib-cssmin.grunt-contrib-cssmin" id="apidoc.element.grunt-contrib-cssmin.grunt-contrib-cssmin">
+        function <span class="apidocSignatureSpan"></span>grunt-contrib-cssmin
+        <span class="apidocSignatureSpan">(grunt)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">grunt-contrib-cssmin = function (grunt) {
+  var getAvailableFiles = function (filesArray) {
+    return filesArray.filter(function (filepath) {
+      if (!grunt.file.exists(filepath)) {
+        grunt.log.warn('Source file ' + chalk.cyan(filepath) + ' not found');
+        return false;
+      }
+      return true;
+    });
+  };
+
+  grunt.registerMultiTask('cssmin', 'Minify CSS', function () {
+    var created = {
+      maps: 0,
+      files: 0
+    };
+    var size = {
+      before: 0,
+      after: 0
+    };
+
+    this.files.forEach(function (file) {
+      var options = this.options({
+        rebase: false,
+        report: 'min',
+        sourceMap: false
+      });
+
+      var availableFiles = getAvailableFiles(file.src);
+      var compiled = '';
+
+      options.target = file.dest;
+      options.relativeTo = path.dirname(availableFiles[0] || '');
+
+      try {
+        compiled = new CleanCSS(options).minify(availableFiles);
+
+        if (compiled.errors.length) {
+          grunt.warn(compiled.errors.toString());
+          return;
+        }
+
+        if (compiled.warnings.length) {
+          grunt.log.error(compiled.warnings.toString());
+        }
+
+        if (options.debug) {
+          grunt.log.writeln(util.format(compiled.stats));
+        }
+      } catch (err) {
+        grunt.log.error(err);
+        grunt.warn('CSS minification failed at ' + availableFiles + '.');
+      }
+
+      var compiledCssString = compiled.styles;
+
+      var unCompiledCssString = availableFiles.map(function (file) {
+        return grunt.file.read(file);
+      }).join('');
+
+      size.before += unCompiledCssString.length;
+
+      if (options.sourceMap) {
+        compiledCssString += '\n' + '/*# sourceMappingURL=' + path.basename(file.dest) + '.map */';
+        grunt.file.write(file.dest + '.map', compiled.sourceMap.toString());
+        created.maps++;
+        grunt.verbose.writeln('File ' + chalk.cyan(file.dest + '.map') + ' created');
+      }
+
+      grunt.file.write(file.dest, compiledCssString);
+      created.files++;
+      size.after += compiledCssString.length;
+      grunt.verbose.writeln('File ' + chalk.cyan(file.dest) + ' created ' + chalk.dim(maxmin(unCompiledCssString, compiledCssString
+, options.report === 'gzip')));
+
+    }, this);
+
+    if (created.maps &gt; 0) {
+      grunt.log.ok(created.maps + ' source' + grunt.util.pluralize(this.files.length, 'map/maps') + ' created.');
+    }
+
+    if (created.files &gt; 0) {
+      grunt.log.ok(created.files + ' ' + grunt.util.pluralize(this.files.length, 'file/files') + ' created. ' + chalk.dim(maxmin
+(size.before, size.after)));
+    } else {
+      grunt.log.warn('No files created.');
+    }
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>

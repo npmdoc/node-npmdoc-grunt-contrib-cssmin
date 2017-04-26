@@ -51,7 +51,7 @@
 
         href="https://github.com/gruntjs/grunt-contrib-cssmin#readme"
 
-    >grunt-contrib-cssmin (v2.0.0)</a>
+    >grunt-contrib-cssmin (v2.1.0)</a>
 </h1>
 <h4>Minify CSS</h4>
 <div class="apidocSectionDiv"><a
@@ -61,12 +61,122 @@
 
     <li class="apidocModuleLi"><a href="#apidoc.module.grunt-contrib-cssmin">module grunt-contrib-cssmin</a><ol>
 
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.grunt-contrib-cssmin.grunt-contrib-cssmin">
+            function <span class="apidocSignatureSpan"></span>grunt-contrib-cssmin
+            <span class="apidocSignatureSpan">(grunt)</span>
+            </a>
+
+        </li>
+
     </ol></li>
 
 </ol></div>
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.grunt-contrib-cssmin" id="apidoc.module.grunt-contrib-cssmin">module grunt-contrib-cssmin</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.grunt-contrib-cssmin.grunt-contrib-cssmin" id="apidoc.element.grunt-contrib-cssmin.grunt-contrib-cssmin">
+        function <span class="apidocSignatureSpan"></span>grunt-contrib-cssmin
+        <span class="apidocSignatureSpan">(grunt)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">grunt-contrib-cssmin = function (grunt) {
+  var getAvailableFiles = function (filesArray) {
+    return filesArray.filter(function (filepath) {
+      if (!grunt.file.exists(filepath)) {
+        grunt.log.warn(&#x27;Source file &#x27; + chalk.cyan(filepath) + &#x27; not found&#x27;);
+        return false;
+      }
+      return true;
+    });
+  };
+
+  grunt.registerMultiTask(&#x27;cssmin&#x27;, &#x27;Minify CSS&#x27;, function () {
+    var created = {
+      maps: 0,
+      files: 0
+    };
+    var size = {
+      before: 0,
+      after: 0
+    };
+
+    this.files.forEach(function (file) {
+      var options = this.options({
+        rebase: false,
+        report: &#x27;min&#x27;,
+        sourceMap: false
+      });
+
+      var availableFiles = getAvailableFiles(file.src);
+      var compiled = &#x27;&#x27;;
+
+      options.target = file.dest;
+      options.relativeTo = path.dirname(availableFiles[0] || &#x27;&#x27;);
+
+      try {
+        compiled = new CleanCSS(options).minify(availableFiles);
+
+        if (compiled.errors.length) {
+          grunt.warn(compiled.errors.toString());
+          return;
+        }
+
+        if (compiled.warnings.length) {
+          grunt.log.error(compiled.warnings.toString());
+        }
+
+        if (options.debug) {
+          grunt.log.writeln(util.format(compiled.stats));
+        }
+      } catch (err) {
+        grunt.log.error(err);
+        grunt.warn(&#x27;CSS minification failed at &#x27; + availableFiles + &#x27;.&#x27;);
+      }
+
+      var compiledCssString = compiled.styles;
+
+      var unCompiledCssString = availableFiles.map(function (file) {
+        return grunt.file.read(file);
+      }).join(&#x27;&#x27;);
+
+      size.before += unCompiledCssString.length;
+
+      if (options.sourceMap) {
+        compiledCssString += &#x27;\n&#x27; + &#x27;/*# sourceMappingURL=&#x27; + path.basename(file.dest) + &#x27;.map */&#x27;;
+        grunt.file.write(file.dest + &#x27;.map&#x27;, compiled.sourceMap.toString());
+        created.maps++;
+        grunt.verbose.writeln(&#x27;File &#x27; + chalk.cyan(file.dest + &#x27;.map&#x27;) + &#x27; created&#x27;);
+      }
+
+      grunt.file.write(file.dest, compiledCssString);
+      created.files++;
+      size.after += compiledCssString.length;
+      grunt.verbose.writeln(&#x27;File &#x27; + chalk.cyan(file.dest) + &#x27; created &#x27; + chalk.dim(maxmin(unCompiledCssString, compiledCssString
+, options.report === &#x27;gzip&#x27;)));
+
+    }, this);
+
+    if (created.maps &#x3e; 0) {
+      grunt.log.ok(created.maps + &#x27; source&#x27; + grunt.util.pluralize(this.files.length, &#x27;map/maps&#x27;) + &#x27; created.&#x27;);
+    }
+
+    if (created.files &#x3e; 0) {
+      grunt.log.ok(created.files + &#x27; &#x27; + grunt.util.pluralize(this.files.length, &#x27;file/files&#x27;) + &#x27; created. &#x27; + chalk.dim(maxmin
+(size.before, size.after)));
+    } else {
+      grunt.log.warn(&#x27;No files created.&#x27;);
+    }
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
 
 </div>
 
