@@ -1,9 +1,14 @@
-# api documentation for  [grunt-contrib-cssmin (v2.0.0)](https://github.com/gruntjs/grunt-contrib-cssmin#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-grunt-contrib-cssmin.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-grunt-contrib-cssmin) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-grunt-contrib-cssmin.svg)](https://travis-ci.org/npmdoc/node-npmdoc-grunt-contrib-cssmin)
+# npmdoc-grunt-contrib-cssmin
+
+#### basic api documentation for  [grunt-contrib-cssmin (v2.1.0)](https://github.com/gruntjs/grunt-contrib-cssmin#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-grunt-contrib-cssmin.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-grunt-contrib-cssmin) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-grunt-contrib-cssmin.svg)](https://travis-ci.org/npmdoc/node-npmdoc-grunt-contrib-cssmin)
+
 #### Minify CSS
 
-[![NPM](https://nodei.co/npm/grunt-contrib-cssmin.png?downloads=true)](https://www.npmjs.com/package/grunt-contrib-cssmin)
+[![NPM](https://nodei.co/npm/grunt-contrib-cssmin.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/grunt-contrib-cssmin)
 
-[![apidoc](https://npmdoc.github.io/node-npmdoc-grunt-contrib-cssmin/build/screenCapture.buildNpmdoc.browser._2Fhome_2Ftravis_2Fbuild_2Fnpmdoc_2Fnode-npmdoc-grunt-contrib-cssmin_2Ftmp_2Fbuild_2Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-grunt-contrib-cssmin/build/apidoc.html)
+- [https://npmdoc.github.io/node-npmdoc-grunt-contrib-cssmin/build/apidoc.html](https://npmdoc.github.io/node-npmdoc-grunt-contrib-cssmin/build/apidoc.html)
+
+[![apidoc](https://npmdoc.github.io/node-npmdoc-grunt-contrib-cssmin/build/screenCapture.buildCi.browser.%252Ftmp%252Fbuild%252Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-grunt-contrib-cssmin/build/apidoc.html)
 
 ![npmPackageListing](https://npmdoc.github.io/node-npmdoc-grunt-contrib-cssmin/build/screenCapture.npmPackageListing.svg)
 
@@ -52,8 +57,8 @@
     ],
     "dependencies": {
         "chalk": "^1.0.0",
-        "clean-css": "~4.0.3",
-        "maxmin": "^1.1.0"
+        "clean-css": "~4.0.12",
+        "maxmin": "^2.1.0"
     },
     "description": "Minify CSS",
     "devDependencies": {
@@ -65,16 +70,16 @@
     },
     "directories": {},
     "dist": {
-        "shasum": "3bc8e8c8865c819159cc2779f82fcf833473345b",
-        "tarball": "https://registry.npmjs.org/grunt-contrib-cssmin/-/grunt-contrib-cssmin-2.0.0.tgz"
+        "shasum": "16a49953cb153c34fff977c062886aebc30b0a41",
+        "tarball": "https://registry.npmjs.org/grunt-contrib-cssmin/-/grunt-contrib-cssmin-2.1.0.tgz"
     },
     "engines": {
-        "node": ">=0.10.0"
+        "node": ">=4.0"
     },
     "files": [
         "tasks"
     ],
-    "gitHead": "e6b2d7238928a2fc7a493a9e38ed721134fe62b8",
+    "gitHead": "f3e398741e0139f1e581e34a68b4755e77afec37",
     "homepage": "https://github.com/gruntjs/grunt-contrib-cssmin#readme",
     "keywords": [
         "gruntplugin",
@@ -90,41 +95,32 @@
     "main": "tasks/cssmin.js",
     "maintainers": [
         {
-            "name": "cowboy",
-            "email": "cowboy@rj3.net"
+            "name": "cowboy"
         },
         {
-            "name": "jmeas",
-            "email": "jellyes2@gmail.com"
+            "name": "jmeas"
         },
         {
-            "name": "jzaefferer",
-            "email": "joern.zaefferer@gmail.com"
+            "name": "jzaefferer"
         },
         {
-            "name": "shama",
-            "email": "kyle@dontkry.com"
+            "name": "shama"
         },
         {
-            "name": "sindresorhus",
-            "email": "sindresorhus@gmail.com"
+            "name": "sindresorhus"
         },
         {
-            "name": "tkellen",
-            "email": "tyler@sleekcode.net"
+            "name": "tkellen"
         },
         {
-            "name": "vladikoff",
-            "email": "vlad@vladikoff.com"
+            "name": "vladikoff"
         },
         {
-            "name": "xhmikosr",
-            "email": "xhmikosr@gmail.com"
+            "name": "xhmikosr"
         }
     ],
     "name": "grunt-contrib-cssmin",
     "optionalDependencies": {},
-    "readme": "ERROR: No README data found!",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/gruntjs/grunt-contrib-cssmin.git"
@@ -132,19 +128,10 @@
     "scripts": {
         "test": "grunt test"
     },
-    "version": "2.0.0"
+    "version": "2.1.0",
+    "bin": {}
 }
 ```
-
-
-
-# <a name="apidoc.tableOfContents"></a>[table of contents](#apidoc.tableOfContents)
-
-#### [module grunt-contrib-cssmin](#apidoc.module.grunt-contrib-cssmin)
-
-
-
-# <a name="apidoc.module.grunt-contrib-cssmin"></a>[module grunt-contrib-cssmin](#apidoc.module.grunt-contrib-cssmin)
 
 
 
